@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>離線去識別化練習工具</title>
+  <style>
+    :root { --navy:#173f67; --blue:#236eaa; --sky:#edf6fb; --ink:#183044; --muted:#617181; --red:#9c2d2d; --red-bg:#fff0f0; --amber:#8a5a00; --amber-bg:#fff7df; --line:#d6e0e7; --green:#16684d; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif; background:#f6f9fb; color:var(--ink); line-height:1.65; }
+    main { max-width:1180px; margin:0 auto; padding:30px 20px 48px; }
+    header { background:linear-gradient(125deg,var(--navy),var(--blue)); color:#fff; padding:30px 34px; border-radius:18px; box-shadow:0 8px 24px #18304422; }
+    h1 { margin:0 0 6px; font-size:clamp(1.65rem,4vw,2.35rem); line-height:1.25; }
+    h2 { color:var(--navy); font-size:1.2rem; margin:0 0 12px; }
+    h3 { font-size:1rem; margin:0 0 6px; }
+    .subtitle { margin:0; opacity:.92; }
+    .notice { margin:20px 0; padding:14px 16px; background:#fff; border-left:5px solid var(--blue); border-radius:8px; box-shadow:0 2px 10px #1830440b; }
+    .notice strong { color:var(--navy); }
+    .grid { display:grid; grid-template-columns:1.08fr .92fr; gap:20px; }
+    .panel { background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px; box-shadow:0 3px 14px #1830440a; }
+    label { display:block; font-weight:700; margin:0 0 7px; }
+    textarea { width:100%; min-height:340px; resize:vertical; padding:14px; border:1px solid #b9cbd7; border-radius:9px; font:1rem/1.65 "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif; color:var(--ink); }
+    textarea:focus { outline:3px solid #a8d7f244; border-color:var(--blue); }
+    .actions { display:flex; flex-wrap:wrap; gap:9px; margin-top:12px; }
+    button { appearance:none; cursor:pointer; border:0; border-radius:8px; padding:10px 14px; font:700 .95rem "Microsoft JhengHei", sans-serif; background:var(--blue); color:#fff; }
+    button:hover { background:#14578e; }
+    button.secondary { background:#e8f1f6; color:var(--navy); }
+    button.danger { background:#a44141; }
+    .helper { color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+    .status { margin:0 0 10px; color:var(--muted); font-size:.94rem; }
+    .findings { display:grid; gap:9px; max-height:347px; overflow:auto; padding-right:3px; }
+    .finding { border:1px solid var(--line); border-left:5px solid var(--amber); padding:10px 12px; border-radius:8px; display:flex; gap:9px; align-items:flex-start; }
+    .finding.high { border-left-color:var(--red); background:var(--red-bg); }
+    .finding.medium { background:var(--amber-bg); }
+    .finding input { margin-top:5px; accent-color:var(--blue); }
+    .finding code { font-family:Consolas, monospace; font-size:.88rem; overflow-wrap:anywhere; }
+    .tag { display:inline-block; border-radius:999px; padding:1px 8px; font-size:.78rem; font-weight:700; margin-right:6px; }
+    .tag.high { background:#f8d9d9; color:var(--red); }
+    .tag.medium { background:#f9e7b9; color:var(--amber); }
+    .checklist { display:grid; gap:9px; margin-top:14px; }
+    .checklist label { font-weight:400; display:flex; align-items:flex-start; gap:8px; padding:8px 10px; border-radius:7px; background:#f7fafb; }
+    .checklist input { margin-top:5px; accent-color:var(--green); }
+    .output { margin-top:20px; }
+    .output textarea { min-height:230px; background:#fbfdfe; }
+    .safe { color:var(--green); font-weight:700; }
+    .legend { display:flex; flex-wrap:wrap; gap:9px; margin:8px 0 14px; font-size:.9rem; }
+    .small { font-size:.86rem; color:var(--muted); }
+    @media (max-width:850px) { .grid { grid-template-columns:1fr; } main { padding:18px 13px 32px; } header { padding:24px 20px; } textarea { min-height:260px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>離線去識別化練習工具</h1>
+      <p class="subtitle">先辨識風險，再決定遮罩或概化；全程僅在此裝置的瀏覽器內處理。</p>
+    </header>
+
+    <section class="notice" aria-label="使用提醒">
+      <strong>教學用途提醒：</strong>本工具是第一輪偵測與練習，不是「已完成去識別化」的保證。請只貼入合成案例、公開資料或已核准的去識別化資料；任何輸出交給外部 AI 前，均須完成人工複核。
+    </section>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>1．貼上練習文字</h2>
+        <label for="sourceText">原始練習文字</label>
+        <textarea id="sourceText" placeholder="請使用合成案例。可按「載入示範案例」先練習。"></textarea>
+        <div class="actions">
+          <button id="sampleBtn" class="secondary" type="button">載入示範案例</button>
+          <button id="scanBtn" type="button">掃描可能風險</button>
+          <button id="clearBtn" class="secondary" type="button">清除全部</button>
+        </div>
+        <p class="helper">不使用網路、不儲存文字、不連接 Gemini、ChatGPT 或其他服務。</p>
+      </section>
+
+      <section class="panel">
+        <h2>2．確認偵測結果</h2>
+        <div class="legend"><span class="tag high">高風險</span>建議遮罩　<span class="tag medium">需判斷</span>建議概化或改寫</div>
+        <p id="scanStatus" class="status" aria-live="polite">尚未掃描。</p>
+        <div id="findings" class="findings" aria-live="polite"></div>
+        <div class="actions">
+          <button id="applyBtn" type="button">套用選取處理</button>
+        </div>
+        <p class="helper">黃色項目常是「組合後可能辨識」的線索，請由熟悉業務情境的人判斷。</p>
+      </section>
+    </div>
+
+    <section class="panel output">
+      <h2>3．人工複核後的教學版本</h2>
+      <label for="resultText">處理結果</label>
+      <textarea id="resultText" readonly placeholder="掃描後，選取要處理的項目，再按「套用選取處理」。"></textarea>
+      <div class="actions">
+        <button id="copyBtn" type="button">複製處理結果</button>
+      </div>
+      <div class="checklist" aria-label="人工複核清單">
+        <label><input type="checkbox"> 我已確認姓名、電話、Email、身分證號、精確地址、帳號及照片資訊均未保留。</label>
+        <label><input type="checkbox"> 我已確認日期、地點、家庭結構、學校、職務與特殊事件的組合，不會讓熟悉業務者辨識當事人。</label>
+        <label><input type="checkbox"> 我已確認資料是合成案例、公開資料或經授權且適當處理的資料。</label>
+        <label><input type="checkbox"> 我已確認外部 AI 只會收到這份人工複核後的版本。</label>
+      </div>
+      <p id="reviewStatus" class="small">完成 4 項複核後，才適合將內容作為外部 AI 的教學素材。</p>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      'use strict';
+      const source = document.querySelector('#sourceText');
+      const result = document.querySelector('#resultText');
+      const findingsEl = document.querySelector('#findings');
+      const status = document.querySelector('#scanStatus');
+      const reviewStatus = document.querySelector('#reviewStatus');
+      let findings = [];
+
+      const sample = `【合成案例】\n某東部地區的家長反映，親子活動報名頁面不易理解，希望能提供更清楚的候補與取消說明。\n\n提醒：這段文字已刻意移除真實姓名、精確地點、日期與個案資訊。請練習判斷：若改成「某偏鄉國小家長、9 月 13 日活動、孩子有特教需求」，是否會提高重新識別風險？`;
+
+      const rules = [
+        { type:'身分證號', level:'high', pattern:/\b[A-Z][12]\d{8}\b/gi, replace:'〈身分證號〉' },
+        { type:'病歷號碼', level:'high', pattern:/(?:病歷號碼|病歷號|病歷編號|病歷碼)\s*[：:]?\s*(?:為|是)?\s*[A-Z0-9][A-Z0-9-]{4,24}/gi, replace:'病歷號碼 XXXXX' },
+        { type:'電子郵件', level:'high', pattern:/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi, replace:'〈電子郵件〉' },
+        { type:'臺灣手機號碼', level:'high', pattern:/(?:\+886[-\s]?)?09\d{2}[-\s]?\d{3}[-\s]?\d{3}/g, replace:'〈手機號碼〉' },
+        { type:'市話', level:'high', pattern:/0\d{1,2}[-\s]?\d{6,8}/g, replace:'〈電話〉' },
+        { type:'精確地址', level:'high', pattern:/(?:臺|台)[北中南東西]?[市縣]|(?:新北|桃園|臺中|台中|臺南|台南|高雄|基隆|新竹|嘉義|屏東|宜蘭|花蓮|臺東|台東|澎湖|金門|連江)[市縣].{0,12}(?:路|街|巷|弄|號)/g, replace:'〈地址〉' },
+        { type:'姓名欄位', level:'high', pattern:/(?:姓名|家長姓名|聯絡人)\s*[：:]\s*[\u4e00-\u9fff]{2,4}/g, replace:'〈姓名欄位〉' },
+        { type:'中文姓名', level:'high', pattern:/(?:趙|錢|孫|李|周|吳|鄭|王|馮|陳|褚|衛|蔣|沈|韓|楊|朱|秦|尤|許|何|呂|施|張|孔|曹|嚴|華|金|魏|陶|姜|戚|謝|鄒|喻|柏|水|竇|章|雲|蘇|潘|葛|奚|范|彭|郎|魯|韋|昌|馬|苗|鳳|花|方|俞|任|袁|柳|酆|鮑|史|唐|費|廉|岑|薛|雷|賀|倪|湯|滕|殷|羅|畢|郝|鄔|安|常|樂|于|傅|皮|卞|齊|康|伍|余|元|卜|顧|孟|平|黃|和|穆|蕭|尹|姚|邵|湛|汪|祁|毛|禹|狄|米|貝|明|臧|計|伏|成|戴|談|宋|茅|龐|熊|紀|舒|屈|項|祝|董|梁|杜|阮|藍|閔|席|季|麻|強|賈|路|婁|危|江|童|顏|郭|梅|盛|林|刁|鍾|徐|邱|駱|高|夏|蔡|田|樊|胡|凌|霍|虞|萬|支|柯|昝|管|盧|莫|經|房|裘|繆|干|解|應|宗|丁|宣|賁|鄧|郁|單|杭|洪|包|諸|左|石|崔|吉|鈕|龔|程|嵇|邢|滑|裴|陸|榮|翁|荀|羊|於|惠|甄|曲|家|封|芮|羿|儲|靳|汲|邴|糜|松|井|段|富|巫|烏|焦|巴|弓|牧|隗|山|谷|車|侯|宓|蓬|全|郗|班|仰|秋|仲|伊|宮|寧|仇|欒|暴|甘|厲|戎|祖|武|符|劉|景|詹|束|龍|葉|幸|司|韶|黎|喬|蒼|雙|聞|莘|黨|翟|譚|貢|勞|逄|姬|申|扶|堵|冉|宰|酈|雍|郤|璩|桑|桂|濮|牛|壽|通|邊|扈|燕|冀|郟|浦|尚|農|溫|別|莊|晏|柴|瞿|閻|充|慕|連|茹|習|宦|艾|魚|容|向|古|易|慎|戈|廖|庾|終|暨|居|衡|步|都|耿|滿|弘|匡|國|文|寇|廣|祿|闕|東|歐|利|蔚|越|夔|隆|師|鞏|厙|聶|晁|勾|敖|融|冷|訾|辛|闞|那|簡|饒|空|曾|毋|沙|乜|養|鞠|須|豐|巢|關|蒯|相|查|后|荊|紅|游|竺|權|逯|蓋|益|桓|公)[\u4e00-\u9fff]{1,2}(?=於|在|至|前往|表示|反映|說明|先生|女士|老師|主任|醫師|同學|家長|[，,])/g, replace:'○○○' },
+        { type:'精確日期', level:'medium', pattern:/\d{1,4}\s*(?:年|\/|-|\.)\s*\d{1,2}\s*(?:月|\/|-|\.)\s*\d{1,2}(?:\s*日)?|\d{1,2}\s*月\s*\d{1,2}\s*日/g, replace:'〈活動日期〉' },
+        { type:'年齡', level:'medium', pattern:/\d{1,3}\s*歲/g, replace:'〈年齡區間〉' },
+        { type:'家庭／健康敏感線索', level:'medium', pattern:/(?:單親|家暴|特教|身心障礙|憂鬱|自閉症|ADHD|保護案件|低收入戶|隔代教養)/gi, replace:'〈敏感家庭描述〉' },
+        { type:'教育機構或班級線索', level:'medium', pattern:/(?:[\u4e00-\u9fff]{2,10}(?:國小|國中|高中|幼兒園)|[一二三四五六]\s*年\s*[甲乙丙丁]班)/g, replace:'〈教育機構／班級線索〉' },
+      ];
+
+      function scan() {
+        const text = source.value;
+        findings = [];
+        if (!text.trim()) { renderFindings(); status.textContent = '請先貼上合成或已核准的練習文字。'; return; }
+        rules.forEach(rule => {
+          const matches = [...text.matchAll(new RegExp(rule.pattern.source, rule.pattern.flags))];
+          matches.forEach(match => findings.push({ ...rule, value:match[0], start:match.index, end:match.index + match[0].length }));
+        });
+        findings.sort((a,b) => a.start - b.start || b.end - a.end);
+        const unique = [];
+        findings.forEach(f => { if (!unique.some(u => f.start < u.end && f.end > u.start)) unique.push(f); });
+        findings = unique;
+        renderFindings();
+        status.textContent = findings.length ? `找到 ${findings.length} 項可能風險。紅色項目預設選取；黃色項目請依情境決定。` : '未找到既定規則可辨識的項目；仍請進行人工複核。';
+      }
+
+      function renderFindings() {
+        findingsEl.innerHTML = '';
+        if (!findings.length) { findingsEl.innerHTML = '<p class="small">尚無項目。請先掃描文字；即使沒有結果，也不代表資料安全。</p>'; return; }
+        findings.forEach((f, i) => {
+          const item = document.createElement('label');
+          item.className = `finding ${f.level}`;
+          item.innerHTML = `<input type="checkbox" data-index="${i}" ${f.level === 'high' ? 'checked' : ''}><span><span class="tag ${f.level}">${f.level === 'high' ? '高風險' : '需判斷'}</span><strong>${escapeHtml(f.type)}</strong><br><code>${escapeHtml(f.value)}</code><br><span class="small">建議處理為：${escapeHtml(f.replace)}</span></span>`;
+          findingsEl.appendChild(item);
+        });
+      }
+
+      function applySelected() {
+        if (!source.value.trim()) return;
+        const selected = [...findingsEl.querySelectorAll('input:checked')].map(el => findings[Number(el.dataset.index)]).sort((a,b) => b.start - a.start);
+        let output = source.value;
+        selected.forEach(f => { output = output.slice(0, f.start) + f.replace + output.slice(f.end); });
+        result.value = output;
+      }
+
+      function escapeHtml(value) { return value.replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[char])); }
+
+      document.querySelector('#sampleBtn').addEventListener('click', () => { source.value = sample; result.value = ''; scan(); });
+      document.querySelector('#scanBtn').addEventListener('click', scan);
+      document.querySelector('#applyBtn').addEventListener('click', applySelected);
+      document.querySelector('#clearBtn').addEventListener('click', () => { source.value = ''; result.value = ''; findings = []; status.textContent = '尚未掃描。'; renderFindings(); });
+      document.querySelector('#copyBtn').addEventListener('click', async () => { if (!result.value) return; await navigator.clipboard.writeText(result.value); document.querySelector('#copyBtn').textContent = '已複製'; setTimeout(() => document.querySelector('#copyBtn').textContent = '複製處理結果', 1400); });
+      document.querySelectorAll('.checklist input').forEach(box => box.addEventListener('change', () => { const done = [...document.querySelectorAll('.checklist input:checked')].length; reviewStatus.innerHTML = done === 4 ? '<span class="safe">4 項人工複核已完成。仍請依機關規範決定是否可使用外部 AI。</span>' : `已完成 ${done}／4 項人工複核。`; }));
+      renderFindings();
+    })();
+  </script>
+</body>
+</html>
