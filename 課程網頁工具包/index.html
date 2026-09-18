@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>家庭教育中心 AI 培力｜第一堂</title>
-  <link rel="stylesheet" href="styles.css?v=20260915-1" />
-  <link rel="stylesheet" href="brand-logos.css?v=20260915-1" />
+  <link rel="stylesheet" href="styles.css?v=20260918-1" />
+  <link rel="stylesheet" href="brand-logos.css?v=20260918-1" />
 </head>
 <body>
   <main class="deck" aria-live="polite">
@@ -166,8 +166,55 @@
       </div>
     </section>
 
-    <section class="slide project-slide" data-title="ChatGPT 專案">
-      <div class="eyebrow">10 · 第一次成功操作</div>
+    <section class="slide image-slide" data-title="四大 AI 平台比較">
+      <img src="assets/four-ai-platforms-comparison.png" alt="ChatGPT、Gemini、Claude 與 Gemini Notebook 四大 AI 平台定位比較" />
+    </section>
+
+    <section class="slide chatgpt-workflow-slide" data-title="ChatGPT 工作方式">
+      <div class="eyebrow">10 · 接著開始用 ChatGPT</div>
+      <h2>我在工作中最常用的三個入口</h2>
+      <div class="chatgpt-workflow">
+        <article><b>01</b><h3>語音</h3><p>先把想法說出來，請 ChatGPT 追問與整理。</p></article>
+        <article class="featured"><b>02</b><h3>專案</h3><p>把目標、資料與相關對話集中在同一個工作空間。</p><strong>我最常用的部分</strong></article>
+        <article><b>03</b><h3>圖表</h3><p>將資料整理成容易檢查與溝通的視覺結果。</p></article>
+      </div>
+      <a class="chatgpt-start-link" href="https://chatgpt.com/" target="_blank" rel="noopener">開啟 ChatGPT <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="slide voice-practice-slide" data-title="語音體驗">
+      <div class="eyebrow">11 · 先從自然對話開始</div>
+      <h2>語音體驗：和 ChatGPT 聊一件工作上的事</h2>
+      <div class="voice-practice-layout">
+        <div class="voice-orb" aria-hidden="true">🎙</div>
+        <ol>
+          <li><b>1</b><span>開啟 ChatGPT 的語音功能。</span></li>
+          <li><b>2</b><span>說出一件最近想改善的工作任務。</span></li>
+          <li><b>3</b><span>請它先追問，再幫你整理需求。</span></li>
+        </ol>
+      </div>
+      <div class="voice-script"><small>不知道怎麼開始，可以直接說</small><p>「我最近想改善一件工作，但還沒想清楚。請你一次問我一個問題，幫我釐清需求。」</p></div>
+    </section>
+
+    <section class="slide meeting-project-slide" data-title="第一個專案：會議紀錄">
+      <div class="eyebrow">12 · 第一個專案</div>
+      <h2>逐字稿會議紀錄</h2>
+      <div class="meeting-project-layout">
+        <ol class="meeting-steps">
+          <li><b>1</b><span>新增專案，名稱設定為「逐字稿會議紀錄」。</span></li>
+          <li><b>2</b><span>複製右側提示詞，貼入專案指示。</span></li>
+          <li><b>3</b><span>貼上已去識別化的逐字稿，產生會議紀錄。</span></li>
+          <li><b>4</b><span>回到原文檢查決策、待辦事項與人名。</span></li>
+        </ol>
+        <div class="meeting-prompt">
+          <small>可複製的專案提示詞</small>
+          <p id="meetingMinutesPrompt">你是一個會議整理高手。我提供逐字稿後，請依照議題或討論段落分段摘錄，並為每一段建立一個清楚的小主題。請保留重要決策、待辦事項與負責人，最後整理完整的會議摘要。如果逐字稿沒有明確提到負責人或期限，請標示「未確認」，不要自行補寫。</p>
+          <button class="copy-goal" type="button" data-copy-target="meetingMinutesPrompt">複製會議紀錄提示詞</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide project-slide" data-title="第二個專案：家庭教育 AI 練習">
+      <div class="eyebrow">13 · 第二個專案</div>
       <h2>建立一個「家庭教育 AI 練習」專案</h2>
       <div class="project-toolbar">
         <a class="chatgpt-link" href="https://chatgpt.com/" target="_blank" rel="noopener"><span class="chatgpt-mark" aria-hidden="true">◎</span>開啟 ChatGPT <b aria-hidden="true">↗</b></a>
@@ -185,20 +232,8 @@
       </div>
     </section>
 
-    <section class="slide" data-title="一個好指令">
-      <div class="eyebrow">11 · 不用背咒語</div>
-      <h2>一個實用指令，只要把四件事說清楚</h2>
-      <div class="prompt-formula">
-        <div><b>情境</b><span>我正在做什麼？</span></div>
-        <em>+</em><div><b>任務</b><span>希望 AI 幫什麼？</span></div>
-        <em>+</em><div><b>條件</b><span>對象、口吻、限制？</span></div>
-        <em>+</em><div><b>格式</b><span>最後要長什麼樣子？</span></div>
-      </div>
-      <div class="prompt-example">我要向家長介紹一場公開的親子活動。請根據下方資訊，改寫成 150 字內、溫暖且清楚的社群貼文，不可自行補上資料中沒有的日期、名額或優惠。</div>
-    </section>
-
     <section class="slide practice-slide" data-title="實作任務">
-      <div class="eyebrow">12 · 你來試試看</div>
+      <div class="eyebrow">14 · 你來試試看</div>
       <h2>用公開或合成資料，完成一個小任務</h2>
       <div class="challenge">
         <div><h3>任務三選一</h3><p>① 改寫一則活動說明　② 發想三個親子活動名稱　③ 把雜亂資訊整理成清單</p><strong>完成後請標出：哪裡可用？哪裡要改？哪裡要查？</strong></div>
@@ -206,7 +241,7 @@
     </section>
 
     <section class="slide advanced-slide" data-title="更進一步">
-      <div class="eyebrow">13 · 完成基本任務後再挑戰</div>
+      <div class="eyebrow">15 · 完成基本任務後再挑戰</div>
       <h2>更進一步：將文件內容生成資訊圖表</h2>
       <div class="advanced-task">
         <div class="advanced-copy"><small>更進一步…</small><h3>將文件內容生成資訊圖表</h3><p id="infographicPrompt">請根據我接下來提供的文件，製作一張繁體中文資訊圖表。先整理出 3～5 個最重要的重點，再以清楚的標題、短句、圖示與流程呈現，讓一般民眾能快速理解。內容只能使用文件中已有的資訊，不可自行補充數字、日期或結論；資料不足或不確定之處請標示「待確認」。完成前先列出你準備採用的重點與版面架構，等我確認後再生成資訊圖表。</p></div>
