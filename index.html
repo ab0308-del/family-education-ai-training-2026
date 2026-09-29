@@ -3,11 +3,181 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=%E8%AA%B2%E7%A8%8B%E7%B6%B2%E9%A0%81%E5%B7%A5%E5%85%B7%E5%8C%85/index.html">
+  <meta name="description" content="臺東縣家庭教育中心 AI 培力課程教材入口">
   <title>家庭教育中心 AI 培力課程</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17324d;
+      --muted: #64748b;
+      --line: #dce7ef;
+      --blue: #2563eb;
+      --teal: #0f9f8f;
+      --paper: rgba(255, 255, 255, 0.9);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(37, 99, 235, 0.18), transparent 28rem),
+        radial-gradient(circle at 90% 78%, rgba(15, 159, 143, 0.18), transparent 30rem),
+        #f5f9fc;
+    }
+
+    main {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 72px 0 56px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--blue);
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 4.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 20px 0 42px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      line-height: 1.8;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .course {
+      position: relative;
+      display: flex;
+      min-height: 320px;
+      flex-direction: column;
+      padding: 32px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--paper);
+      box-shadow: 0 24px 60px rgba(23, 50, 77, 0.1);
+      backdrop-filter: blur(12px);
+    }
+
+    .course::after {
+      position: absolute;
+      right: -56px;
+      bottom: -72px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      content: "";
+    }
+
+    .course:nth-child(1) { --accent: var(--blue); --accent-soft: rgba(37, 99, 235, 0.13); }
+    .course:nth-child(2) { --accent: var(--teal); --accent-soft: rgba(15, 159, 143, 0.14); }
+
+    .number {
+      width: max-content;
+      margin-bottom: 34px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    h2 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      line-height: 1.3;
+    }
+
+    .course p {
+      position: relative;
+      z-index: 1;
+      margin: 14px 0 28px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .course a {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      width: max-content;
+      margin-top: auto;
+      padding: 12px 18px;
+      border-radius: 12px;
+      color: #fff;
+      background: var(--accent);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .course a:hover,
+    .course a:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px var(--accent-soft);
+    }
+
+    footer {
+      margin-top: 38px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      main { padding-top: 48px; }
+      .courses { grid-template-columns: 1fr; }
+      .course { min-height: 280px; }
+    }
+  </style>
 </head>
 <body>
-  <p>正在開啟課程簡報……</p>
-  <p><a href="%E8%AA%B2%E7%A8%8B%E7%B6%B2%E9%A0%81%E5%B7%A5%E5%85%B7%E5%8C%85/index.html">若未自動前往，請點此開啟</a></p>
+  <main>
+    <p class="eyebrow">AI WORKFLOW TRAINING</p>
+    <h1>家庭教育中心<br>AI 培力課程</h1>
+    <p class="lead">從安全使用生成式 AI，到運用 Gemini 串起 Google 工作流程。請選擇要開啟的課程教材。</p>
+
+    <section class="courses" aria-label="課程教材">
+      <article class="course">
+        <span class="number">第一堂｜基礎與安全</span>
+        <h2>AI 不是答案機，是工作夥伴</h2>
+        <p>認識生成式 AI、建立提示詞觀念，並練習個資保護、查證與工作情境應用。</p>
+        <a href="%E8%AA%B2%E7%A8%8B%E7%B6%B2%E9%A0%81%E5%B7%A5%E5%85%B7%E5%8C%85/index.html">開啟第一堂課</a>
+      </article>
+
+      <article class="course">
+        <span class="number">第二堂｜Gemini 工作流</span>
+        <h2>從資料整合到離線工具</h2>
+        <p>串接 Gmail、雲端硬碟與行事曆，練習深度研究，並用 Canvas 製作去識別化工具。</p>
+        <a href="second-session-web/index.html">開啟第二堂課</a>
+      </article>
+    </section>
+
+    <footer>臺東縣家庭教育中心 AI 培力課程</footer>
+  </main>
 </body>
 </html>

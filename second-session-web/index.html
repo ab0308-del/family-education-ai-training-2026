@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="家庭教育中心 AI 培力第二堂：Gemini 工作流、Google Workspace、深度研究與 Canvas 實作。">
+  <title>家庭教育中心 AI 培力｜第二堂 Gemini 工作流</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234285F4'/%3E%3Cpath d='M16 19h32v26H16z' fill='white' opacity='.95'/%3E%3Cpath d='M22 27h20M22 33h20M22 39h13' stroke='%2314B8A6' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='47' cy='18' r='9' fill='%23FABB05'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=20260927-1">
+</head>
+<body>
+  <a class="skip-link" href="#deck">跳到簡報內容</a>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+
+  <main class="deck" id="deck" aria-live="polite">
+    <section class="slide active cover" data-section="開場" data-title="Gemini 工作流">
+      <div class="cover-grid">
+        <div>
+          <p class="eyebrow">2026.10.02 · 家庭教育中心 AI 培力第二堂</p>
+          <h1>Gemini<br><span>工作流</span></h1>
+          <p class="lead">從 Google 資料整合，到可離線使用的小工具。</p>
+          <div class="cover-actions">
+            <a class="button primary" href="https://gemini.google.com/" target="_blank" rel="noopener">開啟 Gemini <span aria-hidden="true">↗</span></a>
+            <a class="button ghost" href="https://padlet.com/ab0308/ai-2026-s023gpwrtoseebrr2eee" target="_blank" rel="noopener">課程 Padlet <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="orbit" aria-label="今天的工作流程">
+          <div class="orbit-core">Gemini</div>
+          <span class="orbit-node n1">Drive</span><span class="orbit-node n2">Gmail</span>
+          <span class="orbit-node n3">Calendar</span><span class="orbit-node n4">Research</span>
+          <span class="orbit-node n5">Canvas</span>
+        </div>
+      </div>
+      <aside class="speaker-note">開場只說明今天會完成一條工作流。不要先逐項介紹所有功能。</aside>
+    </section>
+
+    <section class="slide" data-section="開場" data-title="為什麼這樣安排">
+      <p class="eyebrow">01 · 問卷回到工作現場</p>
+      <h2>大家想改善的，是每天真的在做的事</h2>
+      <div class="metric-grid six">
+        <article><strong>6</strong><span>行政文件</span></article>
+        <article><strong>5</strong><span>文案貼文</span></article>
+        <article><strong>5</strong><span>簡報視覺</span></article>
+        <article><strong>4</strong><span>活動企劃</span></article>
+        <article><strong>4</strong><span>會議整理</span></article>
+        <article><strong>4</strong><span>資料分析</span></article>
+      </div>
+      <div class="bottom-callout"><span class="glyph">◎</span><p>今天不做功能巡禮。我們用一個活動案例，把資料、研究與工具串成可檢查的成果。</p></div>
+      <aside class="speaker-note">7 份問卷。熟悉度平均約 2.7，程度差異大，因此每段都保留替代路徑。</aside>
+    </section>
+
+    <section class="slide" data-section="開場" data-title="今天的三個成果">
+      <p class="eyebrow">02 · 離開教室前</p>
+      <h2>今天要帶走三個可以繼續用的成果</h2>
+      <div class="outcome-grid">
+        <article class="outcome blue"><span>01</span><div class="line-icon">≣</div><h3>最新活動資訊表</h3><p>知道哪一項資料來自哪個版本。</p></article>
+        <article class="outcome teal"><span>02</span><div class="line-icon">⌕</div><h3>可信來源證據表</h3><p>研究結果能回到原始來源查證。</p></article>
+        <article class="outcome yellow"><span>03</span><div class="line-icon">&lt;/&gt;</div><h3>離線工具初版</h3><p>用合成資料測試，不把個資送出去。</p></article>
+      </div>
+    </section>
+
+    <section class="slide workflow-slide" data-section="開場" data-title="今天只走一條工作流">
+      <p class="eyebrow">03 · 一條路走完整</p>
+      <h2>先把資料弄清楚，再請 AI 幫忙</h2>
+      <ol class="workflow">
+        <li><b>1</b><strong>找資料</strong><small>Drive</small></li>
+        <li><b>2</b><strong>比版本</strong><small>Gmail</small></li>
+        <li><b>3</b><strong>排日程</strong><small>Calendar</small></li>
+        <li><b>4</b><strong>做研究</strong><small>Deep Research</small></li>
+        <li><b>5</b><strong>產摘要</strong><small>Gemini</small></li>
+        <li><b>6</b><strong>做工具</strong><small>Canvas</small></li>
+        <li><b>7</b><strong>人測試</strong><small>人工複核</small></li>
+      </ol>
+    </section>
+
+    <section class="slide" data-section="開場" data-title="開始前先確認">
+      <p class="eyebrow">04 · 課前檢查</p>
+      <h2>四件事確認好，就可以開始</h2>
+      <div class="check-grid">
+        <article><span>1</span><h3>Gemini 已登入</h3><p>使用自己的 Google 帳號。</p></article>
+        <article><span>2</span><h3>資料包已下載</h3><p>今天使用資料包一。</p></article>
+        <article><span>3</span><h3>只用合成資料</h3><p>不要貼真實姓名與聯絡方式。</p></article>
+        <article><span>4</span><h3>功能不同沒關係</h3><p>每個步驟都有替代路徑。</p></article>
+      </div>
+      <div class="resource-row">
+        <a class="resource-chip" href="assets/資料包1_親子情緒運動日_課堂模擬.zip" download>下載資料包一</a>
+        <a class="resource-chip muted" href="assets/資料包2_祖父母節家庭日_課後作業.zip" download>下載課後作業</a>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Google 工作流" data-title="連結服務能做什麼">
+      <p class="eyebrow">05 · Connected Apps</p>
+      <h2>Gemini 可以協助找、讀、整理，也可以操作部分服務</h2>
+      <div class="hub-diagram">
+        <div class="hub-core">Gemini</div>
+        <article><b>Gmail</b><span>找信、摘要、辨識更新</span></article>
+        <article><b>Drive</b><span>找文件、摘錄、比較內容</span></article>
+        <article><b>Calendar</b><span>查詢或建立活動</span></article>
+      </div>
+      <div class="warning-line">Gemini 仍可能引用較舊資料。回答後一定要開啟來源核對。</div>
+    </section>
+
+    <section class="slide" data-section="Google 工作流" data-title="連結前的三個條件">
+      <p class="eyebrow">06 · 先檢查帳號環境</p>
+      <h2>連不上，不一定是你操作錯誤</h2>
+      <div class="condition-flow">
+        <article><span>01</span><h3>同一個帳號</h3><p>Gemini 與 Gmail／Drive 使用相同 Google 帳號。</p></article>
+        <i>＋</i>
+        <article><span>02</span><h3>所需設定已開啟</h3><p>Gemini 活動紀錄與 Workspace 智慧功能可能需要開啟。</p></article>
+        <i>＋</i>
+        <article><span>03</span><h3>管理員允許</h3><p>工作或學校帳號可能限制連結服務。</p></article>
+      </div>
+      <p class="fallback-banner">無法連結時：直接使用資料包文字，也能完成同一個判斷任務。</p>
+    </section>
+
+    <section class="slide" data-section="Google 工作流" data-title="連結服務的安全界線">
+      <p class="eyebrow">07 · 第一道安全門</p>
+      <h2>連得上，不代表什麼資料都能用</h2>
+      <div class="traffic-grid">
+        <article class="green"><b>可使用</b><h3>公開、虛構、合成資料</h3><p>活動公開資訊、課堂模擬文件。</p></article>
+        <article class="yellow"><b>先確認</b><h3>內部但不敏感的文件</h3><p>先確認單位規範與帳號環境。</p></article>
+        <article class="red"><b>不上傳</b><h3>個資、兒少與未公開個案</h3><p>真實報名資料、聯絡方式、敏感紀錄。</p></article>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Google 工作流" data-title="連結服務提示詞四要素">
+      <p class="eyebrow">08 · 讓 Gemini 知道去哪裡找</p>
+      <h2>提示詞要說清楚「服務、線索、格式、邊界」</h2>
+      <div class="formula-grid">
+        <article><b>服務</b><p>Google Drive、Gmail 或 Calendar</p></article>
+        <span>＋</span><article><b>線索</b><p>檔名、主旨、關鍵字、日期</p></article>
+        <span>＋</span><article><b>格式</b><p>四欄表格、待辦清單、活動欄位</p></article>
+        <span>＋</span><article><b>邊界</b><p>標示來源；缺漏寫「未確認」</p></article>
+      </div>
+      <div class="micro-tip">可在新對話輸入 <kbd>@</kbd> 選擇服務；介面若不同，就直接在提示詞中寫出 Gmail 或 Drive。</div>
+    </section>
+
+    <section class="slide demo-slide" data-section="Google 工作流" data-title="先找 Drive 草案">
+      <p class="eyebrow">09 · 講師示範一</p>
+      <h2>先找基準文件：活動執行草案</h2>
+      <div class="demo-layout">
+        <div class="prompt-card compact"><small>示範提示</small><p>請從 Google Drive 找到「親子情緒運動日活動執行草案」，摘錄活動日期、時間、場地、對象、注意事項與仍未確認的內容，並附上來源。</p></div>
+        <div class="doc-preview"><div class="doc-top"><span>Drive</span><b>活動執行草案 版本一</b></div><dl><dt>日期</dt><dd>2026/10/24</dd><dt>活動</dt><dd>09:00–12:00</dd><dt>報到</dt><dd>08:30</dd><dt>地點</dt><dd>臺東大學戶外訓練場（模擬）</dd></dl></div>
+      </div>
+    </section>
+
+    <section class="slide demo-slide" data-section="Google 工作流" data-title="再找 Gmail 更新">
+      <p class="eyebrow">10 · 講師示範二</p>
+      <h2>再找更新：信件主旨與日期就是版本線索</h2>
+      <div class="mail-timeline">
+        <article><time>09/20</time><div><b>場地確認</b><p>08:00 工作人員進場；10/15 前交器材清單。</p></div></article>
+        <article><time>09/22</time><div><b>安全與報到建議</b><p>安全說明 20 分鐘；不詢問疾病診斷。</p></div></article>
+        <article class="latest"><time>09/25</time><div><b>最新：報到時間更新</b><p>報到改為 08:10–08:30；器材清單改為 10/14。</p></div></article>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Google 工作流" data-title="解決版本衝突">
+      <p class="eyebrow">11 · 講師示範三</p>
+      <h2>不是把資訊混在一起，而是留下變更脈絡</h2>
+      <div class="compare-table" role="table" aria-label="版本差異示例">
+        <div class="row head" role="row"><span>項目</span><span>草案</span><span>最新資料</span><span>判斷</span></div>
+        <div class="row" role="row"><b>報到</b><span>08:30</span><span>08:10–08:30</span><em>採 09/25 信件</em></div>
+        <div class="row" role="row"><b>器材期限</b><span>10/15</span><span>10/14</span><em>採 09/25 信件</em></div>
+        <div class="row" role="row"><b>工作人員</b><span>未記載</span><span>08:00</span><em>新增並附來源</em></div>
+        <div class="row" role="row"><b>雨天細節</b><span>備援日 10/31</span><span>未完整說明</span><em class="pending">未確認</em></div>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Google 工作流" data-title="Calendar 前先停一下">
+      <p class="eyebrow">12 · 講師示範四</p>
+      <h2>建立行事曆前，先讓人看一遍</h2>
+      <div class="two-stage">
+        <article><span>STEP 1</span><h3>只產生預覽</h3><ul><li>標題</li><li>日期與時間</li><li>地點</li><li>活動說明</li></ul></article>
+        <div class="pause-symbol">停</div>
+        <article><span>STEP 2</span><h3>確認後才建立</h3><ul><li>不邀請任何人</li><li>標題加「課程練習」</li><li>回到 Calendar 檢查</li></ul></article>
+      </div>
+      <div class="prompt-inline"><p id="calendarPrompt">請先列出你準備建立的活動標題、日期、開始時間、結束時間與備註，等我確認後，再於 Google Calendar 建立標題為「課程練習 親子情緒運動日」的活動。不要邀請任何人。建立後請提醒我回到 Calendar 檢查地點與活動說明。</p><button data-copy-target="calendarPrompt">複製</button></div>
+    </section>
+
+    <section class="slide practice-slide" data-section="Google 工作流" data-title="課堂實作：親子情緒運動日">
+      <p class="eyebrow">13 · 學員操作 25 分鐘</p>
+      <h2>資料包一：整理出<br>可執行的最新版本</h2>
+      <div class="practice-board">
+        <div class="practice-timer">25<small>分鐘</small></div>
+        <ol><li>開啟活動草案與三封模擬信件。</li><li>請 Gemini 比較版本並標示來源。</li><li>確認報到時間與器材期限。</li><li>把不足的內容標示「未確認」。</li></ol>
+      </div>
+      <div class="completion">完成標準：一張含「已確認、最新變更、尚待確認、來源與日期」的表格。</div>
+    </section>
+
+    <section class="slide" data-section="Google 工作流" data-title="可直接使用的提示詞">
+      <p class="eyebrow">14 · 操作卡</p>
+      <h2>先複製，再依自己的介面調整服務名稱</h2>
+      <div class="prompt-card large"><p id="workspacePrompt">請比較 Google Drive 中的「親子情緒運動日活動執行草案」與 Gmail 主旨包含「親子情緒運動日」的模擬信件。<br><br>請分成四欄整理：<br>1. 已確認事項<br>2. 最新變更<br>3. 尚待確認事項<br>4. 資訊來源與日期<br><br>若文件與信件不同，以日期較新的信件為準，但必須標示變更，不可自行補寫。</p><button class="copy-button" data-copy-target="workspacePrompt">複製完整提示詞</button></div>
+    </section>
+
+    <section class="slide" data-section="Google 工作流" data-title="中途檢查">
+      <p class="eyebrow">15 · 先停一下再往下</p>
+      <h2>你的結果有留下這六個線索嗎？</h2>
+      <div class="inspection-grid">
+        <label><input type="checkbox">活動日期與時間</label><label><input type="checkbox">最新報到時間</label>
+        <label><input type="checkbox">場地與參加對象</label><label><input type="checkbox">器材清單期限</label>
+        <label><input type="checkbox">每項資訊來源</label><label><input type="checkbox">尚待確認事項</label>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Google 工作流" data-title="人工複核">
+      <p class="eyebrow">16 · AI 回答之後</p>
+      <h2>人工複核不是最後一步，而是工作流的一部分</h2>
+      <div class="verify-path">
+        <article><span>AI</span><h3>讀取結果</h3><p>找到它採用的日期與數字。</p></article><i>→</i>
+        <article><span>源</span><h3>打開來源</h3><p>回到原文件、原信件與原始連結。</p></article><i>→</i>
+        <article><span>人</span><h3>做出判斷</h3><p>確認、修正，或標示未確認。</p></article>
+      </div>
+    </section>
+
+    <section class="slide break-slide" data-section="休息" data-title="休息一">
+      <p class="eyebrow">BREAK · 回來後進入深度研究</p>
+      <h2>休息一下</h2>
+      <div class="countdown" data-timer="600"><span class="time-display">10:00</span><div><button class="timer-toggle">開始</button><button class="timer-reset">重設</button></div></div>
+      <p>可以先開啟 Gemini 新對話，回來後直接開始。</p>
+    </section>
+
+    <section class="slide" data-section="深度研究" data-title="什麼時候需要深度研究">
+      <p class="eyebrow">17 · 選對模式</p>
+      <h2>不是每一題都要用深度研究</h2>
+      <div class="mode-compare">
+        <article><small>一般 Gemini</small><h3>快速整理與改寫</h3><ul><li>摘要一段文字</li><li>調整語氣</li><li>整理既有資料</li></ul></article>
+        <article class="featured"><small>Deep Research</small><h3>多來源研究與綜整</h3><ul><li>需要多個可信來源</li><li>需要研究計畫</li><li>需要證據與限制</li></ul></article>
+      </div>
+    </section>
+
+    <section class="slide" data-section="深度研究" data-title="先決定研究問題">
+      <p class="eyebrow">18 · 問題決定研究品質</p>
+      <h2>先把問題縮小到可以查、可以用</h2>
+      <div class="question-refine">
+        <div class="bad-question">親子運動有什麼好處？</div>
+        <div class="refine-arrow">↓</div>
+        <div class="good-question">近五年，親子共同運動或戶外合作任務，對兒童情緒覺察、挫折調節、親子溝通與合作可能產生哪些影響？</div>
+      </div>
+      <div class="tags"><span>對象</span><span>時間範圍</span><span>活動類型</span><span>想了解的影響</span></div>
+    </section>
+
+    <section class="slide" data-section="深度研究" data-title="來源怎麼選">
+      <p class="eyebrow">19 · Sources</p>
+      <h2>先選來源，再決定是否開始研究</h2>
+      <div class="source-selector">
+        <article class="selected"><span>✓</span><h3>Google Search</h3><p>預設來源；優先查找公開資料。</p></article>
+        <article><span>＋</span><h3>Gmail／Drive</h3><p>帳號允許時加入；只用合成或合規資料。</p></article>
+        <article><span>＋</span><h3>上傳檔案</h3><p>先判斷資料安全，再決定是否上傳。</p></article>
+      </div>
+      <p class="safety-note">今天的研究主題使用公開資料即可，不需要加入真實報名資料。</p>
+    </section>
+
+    <section class="slide" data-section="深度研究" data-title="研究提示詞">
+      <p class="eyebrow">20 · 課堂實作二</p>
+      <h2>研究親子共同運動與情緒學習</h2>
+      <div class="prompt-card large research-prompt"><p id="researchPrompt">請研究近五年親子共同運動、戶外合作任務或冒險體驗，對兒童情緒覺察、挫折調節、親子溝通與合作可能產生的影響。<br><br>優先使用政府、學術機構與具公信力的非營利組織資料。先提出研究計畫，等我確認後再執行。最後用表格整理：主要主張、證據內容、來源機構、發布日期、原始連結、可運用在親子情緒運動日的方式、研究限制。</p><button class="copy-button" data-copy-target="researchPrompt">複製研究提示詞</button></div>
+    </section>
+
+    <section class="slide" data-section="深度研究" data-title="先審研究計畫">
+      <p class="eyebrow">21 · 不急著按開始</p>
+      <h2>研究計畫先過四關</h2>
+      <div class="plan-review">
+        <article><b>01</b><h3>有沒有偏題？</h3><p>仍聚焦親子共同運動與情緒學習。</p></article>
+        <article><b>02</b><h3>來源合理嗎？</h3><p>政府、學術、可信非營利組織優先。</p></article>
+        <article><b>03</b><h3>範圍太大嗎？</h3><p>必要時刪除無法在課程中使用的分支。</p></article>
+        <article><b>04</b><h3>輸出能用嗎？</h3><p>必須保留連結、日期與研究限制。</p></article>
+      </div>
+    </section>
+
+    <section class="slide" data-section="深度研究" data-title="研究完成標準">
+      <p class="eyebrow">22 · 不只看摘要</p>
+      <h2>每一項主張，都要能回到來源</h2>
+      <div class="evidence-table">
+        <div class="ev-head"><span>主要主張</span><span>證據內容</span><span>來源</span><span>如何運用</span><span>限制</span></div>
+        <div class="ev-row"><span>親子合作任務</span><span>摘要證據</span><span>機構／日期／連結</span><span>活動流程設計</span><span>研究對象與情境</span></div>
+        <div class="ev-row faded"><span>情緒調節</span><span>等待研究結果</span><span>開啟原始頁面</span><span>引導語與反思</span><span>不能過度推論</span></div>
+      </div>
+      <div class="source-rule">至少實際開啟並檢查 2 個原始來源。</div>
+    </section>
+
+    <section class="slide" data-section="深度研究" data-title="等待研究時做什麼">
+      <p class="eyebrow">23 · 研究在背景進行</p>
+      <h2>等待的幾分鐘，先完成不需要等的工作</h2>
+      <div class="parallel-layout">
+        <div class="research-running"><div class="spinner" aria-hidden="true"></div><strong>Deep Research 執行中</strong><small>可能需要數分鐘</small></div>
+        <div class="parallel-tasks"><label><input type="checkbox">核對最新活動時間</label><label><input type="checkbox">整理行前待辦</label><label><input type="checkbox">列出尚待確認事項</label><label><input type="checkbox">研究完成後抽查兩筆來源</label></div>
+      </div>
+    </section>
+
+    <section class="slide" data-section="深度研究" data-title="一頁式工作摘要">
+      <p class="eyebrow">24 · 一般 Gemini 整合</p>
+      <h2>把已確認資料與研究證據，整理成工作摘要</h2>
+      <div class="summary-sheet">
+        <header><b>親子情緒運動日｜活動工作摘要</b><span>版本日期：未確認</span></header>
+        <div class="summary-grid"><span>活動目標</span><span>對象</span><span>時間與場地</span><span>活動流程</span><span>行前待辦</span><span>資料安全</span><span class="wide">仍未確認事項</span></div>
+      </div>
+      <div class="prompt-inline"><p id="summaryPrompt">請根據已確認的活動資料、最新信件摘要與深度研究結果，整理一頁式活動工作摘要。內容包含活動目標、對象、時間、場地、流程、行前待辦、資料安全提醒、仍未確認事項。沒有出現在資料中的內容一律標示「未確認」。</p><button data-copy-target="summaryPrompt">複製</button></div>
+    </section>
+
+    <section class="slide" data-section="深度研究" data-title="兩人互查">
+      <p class="eyebrow">25 · 同伴複核 5 分鐘</p>
+      <h2>交換檢查，各自修正一項</h2>
+      <div class="peer-review">
+        <article><span>A</span><h3>檢查版本資訊</h3><p>日期、時間、變更與未確認事項。</p></article>
+        <div class="swap">⇄</div>
+        <article><span>B</span><h3>檢查研究來源</h3><p>機構、日期、原始連結與限制。</p></article>
+      </div>
+      <div class="completion">不是看文句漂不漂亮，而是看資訊能不能被追溯。</div>
+    </section>
+
+    <section class="slide break-slide" data-section="休息" data-title="休息二">
+      <p class="eyebrow">BREAK · 回來後用 Canvas 做工具</p>
+      <h2>休息一下</h2>
+      <div class="countdown" data-timer="600"><span class="time-display">10:00</span><div><button class="timer-toggle">開始</button><button class="timer-reset">重設</button></div></div>
+      <p>回來後請保留 Gemini 視窗，準備開啟 Canvas。</p>
+    </section>
+
+    <section class="slide" data-section="Canvas" data-title="Canvas 適合做什麼">
+      <p class="eyebrow">26 · 互動工作空間</p>
+      <h2>今天只聚焦一種成果：單檔離線工具</h2>
+      <div class="canvas-capabilities">
+        <article><span>文</span><h3>共同修改文件</h3></article>
+        <article><span>碼</span><h3>產生程式原型</h3></article>
+        <article><span>眼</span><h3>即時預覽效果</h3></article>
+        <article class="focus"><span>檔</span><h3>下載單一 HTML</h3><p>今天的重點</p></article>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Canvas" data-title="先寫工具規格">
+      <p class="eyebrow">27 · 先規格，後程式</p>
+      <h2>AI 寫程式前，六件事要說清楚</h2>
+      <div class="spec-grid"><article><b>輸入</b><span>貼入什麼資料</span></article><article><b>輸出</b><span>要看到什麼結果</span></article><article><b>規則</b><span>要偵測哪些項目</span></article><article><b>限制</b><span>不可連網、不儲存</span></article><article><b>錯誤</b><span>誤判與漏判怎麼提醒</span></article><article><b>測試</b><span>如何證明工具可用</span></article></div>
+    </section>
+
+    <section class="slide" data-section="Canvas" data-title="最低功能規格">
+      <p class="eyebrow">28 · 去識別化檢查器</p>
+      <h2>工具至少要讓使用者看得見、選得了、改得回</h2>
+      <div class="tool-wireframe">
+        <div class="wire-input"><small>原始文字</small><p>貼上合成報名資料……</p></div>
+        <div class="wire-detect"><small>疑似項目</small><p><mark>姓名</mark> <mark>電話</mark> <mark>Email</mark></p><button>逐項確認</button></div>
+        <div class="wire-output"><small>處理結果</small><p>產生替換後版本……</p></div>
+      </div>
+      <p class="safety-note">規則式工具不可能百分之百正確。送出前仍需人工複核。</p>
+    </section>
+
+    <section class="slide" data-section="Canvas" data-title="Canvas 建置提示詞">
+      <p class="eyebrow">29 · 課堂實作三</p>
+      <h2>把技術限制與功能需求一起交代</h2>
+      <div class="prompt-card canvas-prompt"><p id="canvasPrompt">請在 Canvas 建立「親子活動報名資料去識別化檢查器」。<br><br><strong>技術限制：</strong><br>1. 只使用一個 HTML 檔案，HTML、CSS、JavaScript 全部內嵌。<br>2. 不使用外部套件、CDN、API、資料庫、網路服務或 AI 功能。<br>3. 所有分析只在使用者的瀏覽器本機完成。<br><br><strong>功能需求：</strong><br>可貼入報名文字；標示疑似姓名、手機、Email、地址、學校、緊急聯絡人與日期；使用者確認後才取代；可複製結果與清除內容；顯示人工複核提醒；預設不得儲存輸入內容。</p><button class="copy-button" data-copy-target="canvasPrompt">複製 Canvas 提示詞</button></div>
+    </section>
+
+    <section class="slide" data-section="Canvas" data-title="第一次先求能測">
+      <p class="eyebrow">30 · 迭代，而不是一次猜完</p>
+      <h2>第一次產出，只要先進入測試循環</h2>
+      <ol class="iteration-loop"><li><b>1</b><span>產生</span></li><li><b>2</b><span>預覽</span></li><li><b>3</b><span>測試</span></li><li><b>4</b><span>記錯</span></li><li><b>5</b><span>修正</span></li><li><b>6</b><span>再測</span></li></ol>
+      <div class="micro-tip">修正要求要具體：「測試 2 把活動名稱誤判成人名，請調整規則並保留其他功能。」</div>
+    </section>
+
+    <section class="slide" data-section="Canvas" data-title="四種測試">
+      <p class="eyebrow">31 · 測試矩陣</p>
+      <h2>只測成功案例，還不能叫做完成</h2>
+      <div class="test-matrix">
+        <article><span>1</span><h3>明確個資</h3><p>姓名、手機、Email、學校、緊急聯絡人。</p></article>
+        <article><span>2</span><h3>沒有個資</h3><p>活動名稱與組別不應被誤判成人名。</p></article>
+        <article><span>3</span><h3>模糊語句</h3><p>小名、日期與備註需要人工判斷。</p></article>
+        <article><span>4</span><h3>部分遮蔽</h3><p>遮蔽手機與示範 Email 是否仍可識別。</p></article>
+      </div>
+    </section>
+
+    <section class="slide" data-section="Canvas" data-title="本機工具與分享連結">
+      <p class="eyebrow">32 · 分享之前先看資料流向</p>
+      <h2>「可分享」與「可處理敏感資料」是兩件事</h2>
+      <div class="local-cloud">
+        <article class="local"><span>本機</span><h3>單檔 HTML</h3><p>依今天的規格，不連網、不儲存，資料留在瀏覽器。</p><strong>仍需檢查實際程式碼</strong></article>
+        <div class="versus">VS</div>
+        <article class="cloud"><span>公開</span><h3>Canvas 分享連結</h3><p>公開應用可能有額外資料儲存與分享風險。</p><strong>不要輸入真實個資</strong></article>
+      </div>
+    </section>
+
+    <section class="slide end-slide" data-section="收束" data-title="今天完成了什麼">
+      <p class="eyebrow">33 · 收束與下一步</p>
+      <h2>今天不是學會更多按鈕，<br>而是完成一條可檢查的工作流</h2>
+      <div class="finish-grid"><span>✓ 比對版本</span><span>✓ 核對來源</span><span>✓ 建立摘要</span><span>✓ 做出工具</span><span>✓ 記錄誤判</span></div>
+      <div class="homework-card">
+        <div><small>課後作業</small><h3>把同一條工作流遷移到「祖父母節家庭日」</h3><p>資料包二不再逐步提示，請保留來源、未確認事項與四組工具測試。</p></div>
+        <a href="assets/資料包2_祖父母節家庭日_課後作業.zip" download>下載資料包二</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="topbar" aria-label="簡報資訊">
+    <a class="brand" href="#1" aria-label="回到封面"><span>G</span><b>家庭教育中心 AI 培力</b></a>
+    <div class="section-name" id="sectionName">開場</div>
+    <button class="notes-toggle" id="notesToggle" type="button" aria-pressed="false">講師備註</button>
+  </div>
+
+  <div class="progress-track" aria-hidden="true"><div id="progressBar"></div></div>
+
+  <nav class="controls" aria-label="簡報控制">
+    <button id="prev" type="button" aria-label="上一頁">←</button>
+    <button id="menuBtn" class="menu-button" type="button" aria-expanded="false"><span id="currentTitle">Gemini 工作流</span><small id="counter">1 / 36</small></button>
+    <button id="next" type="button" aria-label="下一頁">→</button>
+    <button id="fullscreen" type="button" aria-label="切換全螢幕">⛶</button>
+  </nav>
+
+  <div class="slide-menu" id="menu" hidden aria-label="投影片目錄"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="slides.js?v=20260927-1"></script>
+</body>
+</html>
