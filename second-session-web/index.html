@@ -6,7 +6,7 @@
   <meta name="description" content="家庭教育中心 AI 培力第二堂：Gemini 工作流、Google Workspace、深度研究與 Canvas 實作。">
   <title>家庭教育中心 AI 培力｜第二堂 Gemini 工作流</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234285F4'/%3E%3Cpath d='M16 19h32v26H16z' fill='white' opacity='.95'/%3E%3Cpath d='M22 27h20M22 33h20M22 39h13' stroke='%2314B8A6' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='47' cy='18' r='9' fill='%23FABB05'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=20260927-1">
+  <link rel="stylesheet" href="styles.css?v=20260930-1">
 </head>
 <body>
   <a class="skip-link" href="#deck">跳到簡報內容</a>
@@ -148,22 +148,36 @@
     <section class="slide demo-slide" data-section="Google 工作流" data-title="再找 Gmail 更新">
       <p class="eyebrow">10 · 講師示範二</p>
       <h2>再找更新：信件主旨與日期就是版本線索</h2>
-      <div class="mail-timeline">
-        <article><time>09/20</time><div><b>場地確認</b><p>08:00 工作人員進場；10/15 前交器材清單。</p></div></article>
-        <article><time>09/22</time><div><b>安全與報到建議</b><p>安全說明 20 分鐘；不詢問疾病診斷。</p></div></article>
-        <article class="latest"><time>09/25</time><div><b>最新：報到時間更新</b><p>報到改為 08:10–08:30；器材清單改為 10/14。</p></div></article>
+      <div class="demo-prompt-layout">
+        <div class="prompt-card side-prompt">
+          <small>示範提示</small>
+          <p id="gmailPrompt">請從 Gmail 找出主旨包含「親子情緒運動日」的模擬信件。以主旨或內文標示的「模擬日期」為版本日期，依日期由舊到新整理：日期、主旨、寄件人、變更事項。找不到的資訊請標示「未確認」，不要自行補寫。</p>
+          <button class="copy-button" data-copy-target="gmailPrompt">複製 Gmail 提示詞</button>
+        </div>
+        <div class="mail-timeline">
+          <article><time>09/20</time><div><b>場地確認</b><p>08:00 工作人員進場；10/15 前交器材清單。</p></div></article>
+          <article><time>09/22</time><div><b>安全與報到建議</b><p>安全說明 20 分鐘；不詢問疾病診斷。</p></div></article>
+          <article class="latest"><time>09/25</time><div><b>最新：報到時間更新</b><p>報到改為 08:10–08:30；器材清單改為 10/14。</p></div></article>
+        </div>
       </div>
     </section>
 
     <section class="slide" data-section="Google 工作流" data-title="解決版本衝突">
       <p class="eyebrow">11 · 講師示範三</p>
       <h2>不是把資訊混在一起，而是留下變更脈絡</h2>
-      <div class="compare-table" role="table" aria-label="版本差異示例">
-        <div class="row head" role="row"><span>項目</span><span>草案</span><span>最新資料</span><span>判斷</span></div>
-        <div class="row" role="row"><b>報到</b><span>08:30</span><span>08:10–08:30</span><em>採 09/25 信件</em></div>
-        <div class="row" role="row"><b>器材期限</b><span>10/15</span><span>10/14</span><em>採 09/25 信件</em></div>
-        <div class="row" role="row"><b>工作人員</b><span>未記載</span><span>08:00</span><em>新增並附來源</em></div>
-        <div class="row" role="row"><b>雨天細節</b><span>備援日 10/31</span><span>未完整說明</span><em class="pending">未確認</em></div>
+      <div class="resolution-layout">
+        <div class="compare-table" role="table" aria-label="版本差異示例">
+          <div class="row head" role="row"><span>項目</span><span>草案</span><span>最新資料</span><span>判斷</span></div>
+          <div class="row" role="row"><b>報到</b><span>08:30</span><span>08:10–08:30</span><em>採 09/25 信件</em></div>
+          <div class="row" role="row"><b>器材期限</b><span>10/15</span><span>10/14</span><em>採 09/25 信件</em></div>
+          <div class="row" role="row"><b>工作人員</b><span>未記載</span><span>08:00</span><em>新增並附來源</em></div>
+          <div class="row" role="row"><b>雨天細節</b><span>備援日 10/31</span><span>未完整說明</span><em class="pending">未確認</em></div>
+        </div>
+        <div class="prompt-card side-prompt">
+          <small>示範提示</small>
+          <p id="versionPrompt">請比較 Google Drive 中的「親子情緒運動日活動執行草案」，以及 Gmail 主旨包含「親子情緒運動日」的模擬信件。<br><br>請用表格整理：項目、草案內容、最新資料、判斷、資訊來源與模擬日期。<br><br>資料衝突時採用日期較新且明確說明的信件；新增內容標示「新增」並附來源；資訊不完整標示「未確認」；不可自行補寫。</p>
+          <button class="copy-button" data-copy-target="versionPrompt">複製比較提示詞</button>
+        </div>
       </div>
     </section>
 
