@@ -312,3 +312,4 @@ p{font-size:clamp(1rem,1.35vw,1.28rem);line-height:1.6}
 @media (max-width:900px){.checkpoint-list,.bonus-layout,.bonus-prompts,.workflow.export-flow{grid-template-columns:1fr}.workflow.export-flow li::after{display:none}}
 .bonus-title{font-size:clamp(1.9rem,3.3vw,3.4rem);margin-bottom:3.5vh}
 .studio-shot img{max-height:42vh}
+.export-prompt{margin-top:4vh;padding:1.1rem 1.3rem}.export-prompt p{font-size:clamp(1.05rem,1.45vw,1.35rem)}
