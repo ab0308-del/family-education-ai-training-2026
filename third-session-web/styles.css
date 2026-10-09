@@ -275,3 +275,40 @@ p{font-size:clamp(1rem,1.35vw,1.28rem);line-height:1.6}
   .web-wireframe .wide { grid-column: auto; }
   .pdf-shot { max-height: 34vh; }
 }
+
+/* 2026-10-09 revisions */
+.backup-list{margin:.8rem 0 0;padding-left:1.3rem;display:grid;gap:.45rem;font-size:clamp(1rem,1.35vw,1.28rem);line-height:1.55}
+.update-tag{display:inline-flex;align-items:center;gap:.6rem;margin:-2vh 0 0;padding:.45rem .9rem .45rem .5rem;border-radius:999px;background:#eef3ff;color:var(--ink-2);font-size:clamp(.9rem,1.1vw,1.05rem);font-weight:700}
+.update-tag span{padding:.15rem .55rem;border-radius:999px;background:var(--blue);color:#fff;font-size:.78em;font-weight:900;letter-spacing:.08em}
+.workflow.export-flow{grid-template-columns:repeat(4,1fr);gap:1.6rem;margin-top:6vh}
+.workflow.export-flow li{min-height:200px;padding:1.8rem 1.2rem}
+.workflow.export-flow li:not(:last-child)::after{right:-1.35rem}
+.workflow.export-flow strong{font-size:clamp(1.2rem,1.6vw,1.5rem)}
+.workflow.export-flow small{font-size:clamp(.92rem,1.1vw,1.05rem);line-height:1.5}
+.workflow.export-flow li:nth-child(2){border-color:#9cc0ff;background:linear-gradient(180deg,#fff,#f1f6ff)}
+
+.checkpoint-slide{color:var(--ink);background:radial-gradient(circle at 88% 12%,rgba(250,187,5,.18),transparent 28%),radial-gradient(circle at 8% 92%,rgba(20,184,166,.12),transparent 30%),linear-gradient(135deg,#fff 0%,var(--paper) 76%)}
+.checkpoint-slide h2{color:var(--ink)}
+.checkpoint-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.checkpoint-list>*{display:flex;align-items:center;gap:.9rem;padding:1.15rem 1.3rem;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:var(--soft);color:var(--ink);font-size:clamp(1.05rem,1.45vw,1.35rem);font-weight:800}
+.checkpoint-list>*::before{content:"✓";display:grid;place-items:center;flex:0 0 34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-weight:900}
+.checkpoint-slide .bottom-callout{margin-top:4vh;background:#fff7dc;color:var(--ink);border:1px solid #f5d77a}
+.checkpoint-slide .bottom-callout .glyph{flex-basis:64px;width:64px;font-size:1.25rem}
+
+.bonus-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:2.4rem;align-items:center}
+.studio-shot{margin:0;padding:1rem;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.studio-shot img{display:block;width:100%;max-height:46vh;object-fit:contain;border-radius:14px}
+.studio-shot figcaption{margin-top:.6rem;text-align:center;color:var(--muted);font-size:.95rem}
+.bonus-cases{display:grid;gap:1.2rem}
+.bonus-cases article{padding:1.5rem 1.7rem;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:var(--soft);border-left:8px solid var(--case,#4285f4)}
+.bonus-cases article>span{color:var(--case,#4285f4);font-weight:900;letter-spacing:.08em}
+.bonus-cases p{margin:.3rem 0 0;color:var(--ink-2)}
+.case-slides{--case:#d14fa0}.case-table{--case:#2f6fe4}
+.bonus-prompts{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:stretch}
+.bonus-prompts .prompt-card{display:flex;flex-direction:column;gap:1rem;max-height:none;border-top:6px solid var(--case)}
+.bonus-prompts .prompt-card small{color:#fff;opacity:.85}
+.bonus-prompts .prompt-card p{flex:1;font-size:clamp(.95rem,1.2vw,1.12rem);line-height:1.7}
+.bonus-prompts .copy-button{align-self:flex-start}
+@media (max-width:900px){.checkpoint-list,.bonus-layout,.bonus-prompts,.workflow.export-flow{grid-template-columns:1fr}.workflow.export-flow li::after{display:none}}
+.bonus-title{font-size:clamp(1.9rem,3.3vw,3.4rem);margin-bottom:3.5vh}
+.studio-shot img{max-height:42vh}

@@ -6,7 +6,7 @@
   <meta name="description" content="家庭教育中心 AI 培力第三堂：Gemini Notebook、Fast Research、子計畫 Word 與 Gemini Canvas 連動。">
   <title>家庭教育中心 AI 培力｜第三堂 Gemini Notebook 神連動</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237B61D6'/%3E%3Cpath d='M16 15h25a7 7 0 0 1 7 7v27H23a7 7 0 0 1-7-7z' fill='white'/%3E%3Cpath d='M24 25h16M24 32h16M24 39h10' stroke='%2314B8A6' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=20261006-1">
+  <link rel="stylesheet" href="styles.css?v=20261009-1">
 </head>
 <body>
   <a class="skip-link" href="#deck">跳到簡報內容</a>
@@ -132,7 +132,7 @@
       <div class="two-stage">
         <article><span>檢查題</span><h3>親職教育有哪些分項計畫？</h3><p>如果答案和原始 PDF 不一致，先不要繼續產生子計畫。</p></article>
         <div class="pause-symbol">查</div>
-        <article><span>備援</span><h3>改用文字清理版節錄</h3><p>PDF 的中文字型或掃描品質可能影響辨識。講師提供頁面截圖與整理版文字。</p></article>
+        <article><span>備援</span><h3>改用文字清理版節錄</h3><ul class="backup-list"><li>PDF 的中文字或掃描品質可能會影響辨識</li><li>使用 Gemini 取用純文字版本</li></ul></article>
       </div>
       <aside class="speaker-note">這份 PDF 的部分文字層曾出現亂碼，因此課前要用實際帳號測試 Notebook 的辨識結果。</aside>
     </section>
@@ -264,16 +264,17 @@
       </div>
     </section>
 
-    <section class="slide" data-section="子計畫" data-title="匯出 Word">
+    <section class="slide" data-section="子計畫" data-title="報告套用計畫格式">
       <p class="eyebrow">22 · 文件交付</p>
-      <h2>報告先進 Docs，再下載 Word</h2>
+      <h2>計畫符合格式，輕鬆完成文書工作</h2>
+      <p class="update-tag"><span>NEW</span>這是最新的 Gemini Notebook 更新</p>
       <ol class="workflow export-flow">
-        <li><b>1</b><strong>產生報告</strong><small>Gemini Notebook</small></li>
-        <li><b>2</b><strong>匯出 Docs</strong><small>Studio 選單</small></li>
-        <li><b>3</b><strong>人工校稿</strong><small>Google Docs</small></li>
-        <li><b>4</b><strong>下載檔案</strong><small>Microsoft Word</small></li>
+        <li><b>1</b><strong>產生報告</strong><small>在 Gemini Notebook 產生報告</small></li>
+        <li><b>2</b><strong>勾選格式來源</strong><small>勾選來源裡的<br>「計畫格式」Word 檔</small></li>
+        <li><b>3</b><strong>輸出 DOCX</strong><small>輸出成 DOCX，下載檔案</small></li>
+        <li><b>4</b><strong>人工校稿</strong><small>逐項複核內容與格式</small></li>
       </ol>
-      <aside class="speaker-note">官方說明：Notebook 報告可匯出 Docs；Google 文件可另存 Microsoft Word。https://support.google.com/gemininotebook/answer/16206563</aside>
+      <aside class="speaker-note">先把機關提供的計畫格式 Word 檔加入 Notebook 來源，產生報告時勾選它，輸出的 DOCX 就會依照該格式排版。下載後仍需人工校稿與複核。</aside>
     </section>
 
     <section class="slide checkpoint-slide" data-section="子計畫" data-title="120 分鐘檢查點">
@@ -359,31 +360,52 @@
       <aside class="speaker-note">投影片的 91% 是為版面示意，不作為正式分析結論。實作時由 Canvas 依 CSV 重新計算並人工核對。</aside>
     </section>
 
-    <section class="slide" data-section="神連動" data-title="第一次修改">
-      <p class="eyebrow">32 · 初版不是完成版</p>
-      <h2>每組至少修正兩件事</h2>
-      <ol class="iteration-loop four">
-        <li><b>1</b><span>找錯誤</span></li><li><b>2</b><span>核對來源</span></li><li><b>3</b><span>追加提示詞</span></li><li><b>4</b><span>重新測試</span></li>
-      </ol>
-      <div class="test-matrix compact-tests"><article><span>內</span><h3>內容修正</h3><p>修正一項錯誤、缺漏或未確認標記。</p></article><article><span>介</span><h3>介面修正</h3><p>改善一項手機閱讀、操作或列印問題。</p></article></div>
-    </section>
-
     <section class="slide" data-section="神連動" data-title="免費帳號控制">
-      <p class="eyebrow">33 · 額度留給主要成果</p>
+      <p class="eyebrow">32 · 額度留給主要成果</p>
       <h2>一個 Notebook、一份報告、一個 Canvas</h2>
       <div class="quota-formula"><article><strong>1</strong><span>Notebook</span></article><b>＋</b><article><strong>2</strong><span>主要來源</span></article><b>＋</b><article><strong>1</strong><span>文件報告</span></article><b>＋</b><article><strong>1</strong><span>Canvas 網頁</span></article></div>
       <div class="warning-line">免費帳號使用量依提示詞複雜度與生成工作量計算。不要同時要求每人產生簡報、影片、語音、資訊圖表與 Canvas。</div>
     </section>
 
     <section class="slide" data-section="收束" data-title="成果分享">
-      <p class="eyebrow">34 · 上傳前先看一遍</p>
+      <p class="eyebrow">33 · 上傳前先看一遍</p>
       <h2>分享成果，也分享你修正了什麼</h2>
       <div class="share-grid"><article><b>Word</b><p>子計畫名稱與一項待確認內容</p></article><article><b>Canvas</b><p>網頁用途與主要使用者</p></article><article><b>查核</b><p>一項從來源中修正的錯誤</p></article><article><b>下一步</b><p>正式使用前還需要補什麼資料</p></article></div>
       <div class="resource-row"><a class="resource-chip" href="https://padlet.com/ab0308/ai-2026-s023gpwrtoseebrr2eee" target="_blank" rel="noopener">開啟課程 Padlet</a></div>
     </section>
 
+    <section class="slide" data-section="加碼" data-title="Notebook 還可以做什麼">
+      <p class="eyebrow">34 · 如果還有時間</p>
+      <h2 class="bonus-title">讓我們來看看 Gemini Notebook 還可以做什麼？</h2>
+      <div class="bonus-layout">
+        <figure class="studio-shot"><img src="assets/notebook-studio.png" alt="Gemini Notebook 工作室面板：語音摘要、簡報、影片摘要、心智圖、報告、學習卡、測驗、資訊圖表、資料表"><figcaption>Notebook 右側的「工作室」</figcaption></figure>
+        <div class="bonus-cases">
+          <article class="case-slides"><span>案例一 · 簡報</span><h3>子計畫一鍵變成說明會簡報</h3><p>用今天完成的子計畫草案，產生給主管或合作學校看的活動說明簡報。</p></article>
+          <article class="case-table"><span>案例二 · 資料表</span><h3>總體計畫活動一覽表</h3><p>把總體計畫裡的活動整理成表格：類別、對象、場次、人次與來源頁碼，方便追蹤。</p></article>
+        </div>
+      </div>
+      <aside class="speaker-note">兩個案例都沿用同一個 Notebook 的來源，不需要重新上傳。免費帳號額度有限，時間不夠時由講師示範即可。</aside>
+    </section>
+
+    <section class="slide" data-section="加碼" data-title="簡報與資料表提示詞">
+      <p class="eyebrow">35 · 加碼提示詞</p>
+      <h2 class="bonus-title">在工作室點「簡報」或「資料表」，貼上提示詞</h2>
+      <div class="bonus-prompts">
+        <div class="prompt-card case-slides scroll-prompt">
+          <small>案例一 · 簡報</small>
+          <p id="promptBonusSlides">請根據我選取的子計畫草案與「115年家庭教育總體計畫」，製作一份 8 頁的活動說明簡報，對象是中心主管與合作學校。頁面依序為：活動名稱與一句話目標、需求背景、服務對象、活動流程、預計場次與人次、分工與資源、預期成效、待確認事項。每頁不超過 3 個重點。數字與日期必須來自來源，缺少的內容標示「待確認」。使用臺灣繁體中文。</p>
+          <button class="copy-button" data-copy-target="promptBonusSlides">複製提示詞</button>
+        </div>
+        <div class="prompt-card case-table scroll-prompt">
+          <small>案例二 · 資料表</small>
+          <p id="promptBonusTable">請從「115年家庭教育總體計畫」整理一份活動一覽資料表，欄位為：計畫類別、活動名稱、服務對象、辦理方式、預計場次、預計人次、合作單位、來源頁碼。每一列是一項活動。來源沒有寫明的欄位填「未載明」，不要自行推估數字。使用臺灣繁體中文。</p>
+          <button class="copy-button" data-copy-target="promptBonusTable">複製提示詞</button>
+        </div>
+      </div>
+    </section>
+
     <section class="slide end-slide" data-section="收束" data-title="今天完成了什麼">
-      <p class="eyebrow">35 · 第三堂完成</p>
+      <p class="eyebrow">36 · 第三堂完成</p>
       <h2>可信資料可以變成文件，也可以變成工具</h2>
       <div class="finish-grid"><span>總體計畫查詢</span><span>Fast Research</span><span>子計畫 Word</span><span>Notebook 與 Gemini</span><span>Canvas 網頁</span><span>人工查核</span></div>
       <div class="homework-card"><div><small>下一次課程</small><h3>AI Agent 與工作流程</h3><p>從單次工具使用，繼續前進到可以重複執行的任務流程。</p></div><span>完成今天的 Word 與 Canvas 成果</span></div>
@@ -398,12 +420,12 @@
   <div class="progress-track" aria-hidden="true"><div id="progressBar"></div></div>
   <nav class="controls" aria-label="簡報控制">
     <button id="prev" type="button" aria-label="上一頁">←</button>
-    <button class="menu-button" id="menuBtn" type="button" aria-expanded="false"><span id="currentTitle">Gemini Notebook 神連動</span><small id="counter">1 / 40</small></button>
+    <button class="menu-button" id="menuBtn" type="button" aria-expanded="false"><span id="currentTitle">Gemini Notebook 神連動</span><small id="counter">1 / 41</small></button>
     <button id="next" type="button" aria-label="下一頁">→</button>
     <button id="fullscreen" type="button" aria-label="全螢幕">⛶</button>
   </nav>
   <div class="slide-menu" id="menu" hidden></div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="slides.js?v=20261006-1"></script>
+  <script src="slides.js?v=20261009-1"></script>
 </body>
 </html>
