@@ -367,3 +367,17 @@ p{font-size:clamp(1rem,1.35vw,1.28rem);line-height:1.6}
   .warm-cover h1 { font-size: clamp(2.75rem, 10vw, 4.4rem); }
 }
 .section-slide .lead { color: #e8f2ff; }
+.faq-prep{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:1.2rem;margin:1rem 0}
+.faq-prep article{padding:1rem 1.3rem;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--soft)}
+.faq-prep h3{margin:.2rem 0 .4rem;font-size:clamp(1rem,1.4vw,1.25rem)}
+.faq-prep h3:not(:first-child){margin-top:.9rem}
+.faq-prep ul{margin:0;padding-left:1.2rem;line-height:1.6}
+.faq-prep p{margin:0;line-height:1.55}
+.faq-fields{display:flex;flex-wrap:wrap;gap:.4rem}
+.faq-fields span{padding:.25rem .7rem;border-radius:999px;background:#e8f2ff;font-weight:800}
+.faq-example{border:1px solid var(--line);border-radius:16px;overflow:auto;box-shadow:var(--soft)}
+.faq-row{display:grid;grid-template-columns:.6fr 1.3fr 1.7fr 1.2fr .9fr;min-width:720px;background:#fff}
+.faq-row span{padding:.6rem .8rem;border-top:1px solid var(--line)}
+.faq-head span{background:var(--ink);color:#fff;font-weight:800;border-top:0}
+@media (max-width:760px){.faq-prep{grid-template-columns:minmax(0,1fr)}.faq-example{max-width:100%}}
+.faq-prep,.faq-example{min-width:0;max-width:100%;width:100%;box-sizing:border-box}
