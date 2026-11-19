@@ -366,3 +366,4 @@ p{font-size:clamp(1rem,1.35vw,1.28rem);line-height:1.6}
   .warm-cover .cover-grid { min-height: 0; }
   .warm-cover h1 { font-size: clamp(2.75rem, 10vw, 4.4rem); }
 }
+.section-slide .lead { color: #e8f2ff; }
